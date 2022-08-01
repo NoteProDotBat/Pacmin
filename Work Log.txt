@@ -1,0 +1,24 @@
+DATE: 6/8/2022
+I got a good blank packman map and am now trying to replace all '&' with 'space'. Over half way
+through but I still am going to need to set over 82,000 variables. I am hoping to be able to set
+all of them with the "for" command. I need to figure out a way to put ANCII characters into cmd
+without getting strange outputs.
+- NotePro
+
+DATE: 6/9/2022
+Finally finished removing all '&'! I learned that I made a mistake while replacing all '&' and
+now need to decide how many characters long and wide I want the character to be.
+- NotePro
+
+DATE: 6/30/2022
+It has been way to long. I decided that I will make the character 26 characters wide and 12
+characters tall.
+- NotePro
+
+DATE: 7/13/2022
+Learned about chcp 65001! ASCII characters finally work! Next up, fixing up the board (again).
+- NotePro
+
+DATE: 7/24/2022
+I finally added buttons! I messed arround with the code for the colors of the buttons and I got
+Some unexpected results. Also worked on the intro animation.
