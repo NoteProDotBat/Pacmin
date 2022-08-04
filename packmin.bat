@@ -137,7 +137,8 @@ mode 113,30
 : LoadAni
 set RTC=%time%
 echo [0;0H
-type "C:\Users\irons\Desktop\CMD files\PackminLoad\packmin%Fnum%.txt"
+::type "C:\Users\irons\Desktop\CMD files\PackminLoad\packmin%Fnum%.txt"
+type "packmin%Fnum%.txt"
 set /a Fnum = %Fnum% + 1
 if %Fnum% GEQ 21 set /a Fnum = 1
 ping 0 -n 1 -w 1 > nul
