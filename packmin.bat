@@ -7,11 +7,14 @@ chcp 65001 > nul
 setlocal ENABLEDELAYEDEXPANSION
 setlocal ENABLEEXTENSIONS
 
+::call Pacset
+::if %errorlevel% NEQ 100 echo.Something went wrong && pause && exit
+
 title Packmin %version% 
 
 :reset
 :: x = 50
-set /a FB = 0
+set /a Ghost = 0
 set /a x = 58
 set /a y = 40
 set /a Fnum = 1
@@ -27,7 +30,7 @@ timeout /t 1 /NOBREAK > nul
 echo [0;0H
 echo.[4m       [0m           
 timeout /t 1 /NOBREAK > nul
-echo [0;0H
+echo [0;0Hs
 echo [4mWelcome to[0m
 timeout /t 1 /NOBREAK > nul
 echo [0;0H
@@ -37,8 +40,8 @@ echo [0;0H
 echo [4mWelcome to Packmin[0m
 timeout /t 1 /NOBREAK > nul
 :GOst
-if %FB%==0 set /a xpos = %xpos% + 1
-if %FB%==1 set /a xpos = %xpos% - 6
+if %Ghost%==0 set /a xpos = %xpos% + 1
+if %Ghost%==1 set /a xpos = %xpos% - 6
 
 echo [5;%xpos%H       ██████ 
 echo [6;%xpos%H     ██████████  
@@ -64,7 +67,7 @@ if %xpos% GEQ 40 (
 	echo [9;3H[33m  ███████[0m
 	timeout /t 1 /NOBREAK > nul
 )
-if %xpos% LEQ 4 if %FB%==1 goto :menu
+if %xpos% LEQ 4 if %Ghost%==1 goto :menu
 goto :GOst
 pause> nul
 :menu
@@ -134,7 +137,7 @@ mode 113,30
 : LoadAni
 set RTC=%time%
 echo [0;0H
-type packmin%Fnum%.txt
+type "C:\Users\irons\Desktop\CMD files\PackminLoad\packmin%Fnum%.txt"
 set /a Fnum = %Fnum% + 1
 if %Fnum% GEQ 21 set /a Fnum = 1
 ping 0 -n 1 -w 1 > nul

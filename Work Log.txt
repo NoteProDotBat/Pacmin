@@ -1,8 +1,9 @@
 DATE: 6/8/2022
 I got a good blank packman map and am now trying to replace all '&' with 'space'. Over half way
-through but I still am going to need to set over 82,000 variables. I am hoping to be able to set
-all of them with the "for" command. I need to figure out a way to put ANCII characters into cmd
-without getting strange outputs.
+through but I still am going to need to set over 82,000 variables. I am hoping to be able to 
+set all of them with the "for" command. I need to figure out a way to put ANCII characters into
+cmd without getting strange outputs. 
+(Now realizing much later I could have done find and replace -_-)
 - NotePro
 
 DATE: 6/9/2022
@@ -11,7 +12,7 @@ now need to decide how many characters long and wide I want the character to be.
 - NotePro
 
 DATE: 6/30/2022
-It has been way to long. I decided that I will make the character 26 characters wide and 12
+It has been way to long. I decided that I will make the character 27 characters wide and 12
 characters tall.
 - NotePro
 
@@ -22,3 +23,21 @@ Learned about chcp 65001! ASCII characters finally work! Next up, fixing up the 
 DATE: 7/24/2022
 I finally added buttons! I messed arround with the code for the colors of the buttons and I got
 Some unexpected results. Also worked on the intro animation.
+- NotePro
+
+DATE 8/1/2022
+I have an idea that hopefully will allow me to make the board all variables. Learned about a
+problem with ascii characters in cmd and am hoping to find a way around it (forgot to log this)
+- NotePro
+
+DATE 8/2/2022
+Learned that there is a limit to tokens in a for loop. Found a way around it that hopefully
+will solve all of my problems. Also fixed the board up. The board is now all variables! The
+variables take up a little over 1MB. Next step, create a rendering process.
+- NotePro
+
+DATE 8/3/2022
+I am very hesitant to get started on the next step. I have to make new code in order to 
+prevent the variable process from slowing down the entire program. Turns out that having over
+82,000 variables creates a lot of stress.
+- NotePro
