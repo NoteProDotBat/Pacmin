@@ -30,7 +30,7 @@ timeout /t 1 /NOBREAK > nul
 echo [0;0H
 echo.[4m       [0m           
 timeout /t 1 /NOBREAK > nul
-echo [0;0Hs
+echo [0;0H
 echo [4mWelcome to[0m
 timeout /t 1 /NOBREAK > nul
 echo [0;0H
@@ -59,7 +59,7 @@ echo [17;%xpos%H  ██ █████ █████ ██
 echo [18;%xpos%H  █   ███   ███   █  
 ping 0 -n 1 -w 1 > nul
 if %xpos% GEQ 40 (
-	set /a FB=1
+	set /a Ghost=1
 	echo [5;3H[33m  █████[37m███[0m
 	echo [6;3H[33m ██████[37m█[30m█[37m█[0m
 	echo [7;3H[33m ██████[37m███[0m
@@ -124,6 +124,7 @@ if %errorlevel%==2 goto :Credits
 if %errorlevel%==6 goto :Load
 if %errorlevel%==10 goto :Load
 if %errorlevel%==14 goto :Load
+if %errorlevel%==18 goto :Load
 
 :Credits
 echo [14;3HGame created by   [101;93mNotePro[0m                             
