@@ -41,3 +41,14 @@ I am very hesitant to get started on the next step. I have to make new code in o
 prevent the variable process from slowing down the entire program. Turns out that having over
 82,000 variables creates a lot of stress.
 - NotePro
+
+DATE 8/6/2022
+I decided to make the view 91x32. Still working on the rendering process. I am thining that I
+would rather have code that works and then work on improving efficiency later after I know how
+I did it.
+- NotePro
+
+DATE 8/9/2022
+I have created step 1 of the rendering process by creating a way for my program to search for
+variables that it needs. Next step, allign the variables to their correct possitions.
+- NotePro
