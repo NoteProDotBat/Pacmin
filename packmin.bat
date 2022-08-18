@@ -1,5 +1,7 @@
 :: [
 
+::Note -- I am going to end up calling :load with the desired durration.
+
 @echo off
 
 chcp 65001 > nul
@@ -10,15 +12,17 @@ setlocal ENABLEEXTENSIONS
 title Packmin %version% 
 
 :reset
-set /a Pacnum = 44475
-set /a vsblty = %Pacnum% - 399 * 10 - 32
+set /a Pacnum = 44875
+set /a vsblty = 40853
+::set /a vsblty = %Pacnum% - 399 * 10 - 32
 set /a Ghost = 0
-set /a x = 58
-set /a y = 40
+set /a x = 1
+set /a y = 1
 set /a Fnum = 1
+set /a ani = 0
 
 echo [?25l
-mode %x%, %y%
+mode 58, 39
 
 echo.
 :: ::█
@@ -132,18 +136,36 @@ echo [17;3H
 timeout /t 5 /NOBREAK > nul
 goto :menu
 :Load
-mode 113,30
-: LoadAni
-set RTC=%time%
+mode 113,33
+:LoadAni
 echo [0;0H
 type "packmin%Fnum%.txt"
 set /a Fnum = %Fnum% + 1
 if %Fnum% GEQ 21 set /a Fnum = 1
 ping 0 -n 1 -w 1 > nul
-::goto :LoadAni
+if %Fnum%==2 (
+	set /a ani+=1
+)
+::going to change 3 to variable
+if %ani% GEQ 4 goto :play
+goto :LoadAni
 
 :play
-set info=set v%vsblty%
+set info=v%vsblty%
 call render
-echo h!v%vsblty%!h
-pause > nul
+call view
+set /a x+=1
+if !x! GTR 91 (
+set /a y+=1
+echo x%x% x!x! y!y!
+set /a x=1
+set /a vsblty+=308
+)
+set /a vsblty+=1
+if %y% GTR 32 (
+set /a y=1
+set /a x=1
+call view
+set /a vsblty = %Pacnum% - 399 * 10 - 32
+)
+goto :play

@@ -52,3 +52,7 @@ DATE 8/9/2022
 I have created step 1 of the rendering process by creating a way for my program to search for
 variables that it needs. Next step, allign the variables to their correct possitions.
 - NotePro
+
+DATE 8/17/2022
+Sorry for taking so long to update! Very buisy. Got render process to work. I think you are
+able to see the entire board. (If you want to wait hours).
