@@ -9,7 +9,7 @@ chcp 65001 > nul
 setlocal ENABLEDELAYEDEXPANSION
 setlocal ENABLEEXTENSIONS
 
-title Packmin %version% 
+title Packmin %version%
 
 :reset
 set /a Pacnum = 44875
@@ -126,7 +126,8 @@ if %errorlevel%==2 goto :Credits
 if %errorlevel%==6 goto :Load
 if %errorlevel%==10 goto :Load
 if %errorlevel%==14 goto :Load
-if %errorlevel%==18 goto :Load
+if %errorlevel%==18 call :Load 4
+goto :play
 
 :Credits
 echo [14;3HGame created by   [101;93mNotePro[0m                             
@@ -146,8 +147,8 @@ ping 0 -n 1 -w 1 > nul
 if %Fnum%==2 (
 	set /a ani+=1
 )
-::going to change 3 to variable
-if %ani% GEQ 4 goto :play
+::going to change 4 to variable
+if %ani% GEQ %1 goto :play
 goto :LoadAni
 
 :play
