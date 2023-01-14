@@ -56,3 +56,10 @@ variables that it needs. Next step, allign the variables to their correct possit
 DATE 8/17/2022
 Sorry for taking so long to update! Very buisy. Got render process to work. I think you are
 able to see the entire board. (If you want to wait hours).
+- NotePro
+
+DATE 1/13/2023
+Side project got me off track but I learned something and I am going to try to apply it to
+the render process in order to make it MUCH faster. Gone from 1 frame per 30 min to 4 frames
+a second! Going to try to optimize more
+- NotePro
