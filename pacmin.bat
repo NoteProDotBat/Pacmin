@@ -1,4 +1,6 @@
 :: [
+:: █
+:: Instead of using a hitbox, make user unable to get off of lines in the middle of the empty space where sprite can move
 
 @echo off
 
@@ -26,77 +28,48 @@ if /I NOT "%~nx0"=="Pacmin.bat" (
 	call :Load -1
 )
 
-if NOT EXIST "%USERPROFILE%\Desktop\Pacmin" (
-	md "%USERPROFILE%\Desktop\Pacmin"
-	md "%USERPROFILE%\Desktop\Pacmin\files"
-	md "%USERPROFILE%\Desktop\Pacmin\files\load"
+if NOT EXIST "C:\Pacmin" (
+	md "C:\Pacmin"
+	md "C:\Pacmin\files"
+	echo.
+	echo [0;0H
+	echo [4mWelcome[0m
+	timeout 1 /NOBREAK > nul
+	echo [0;0H
+	echo.[4m       [0m           
+	timeout 1 /NOBREAK > nul
+	echo [0;0H
+	echo [4mWelcome to[0m
+	timeout 1 /NOBREAK > nul
+	echo [0;0H
+	echo.[4m          [0m        
+	timeout 1 /NOBREAK > nul
+	echo [0;0H
+	echo [4mWelcome to Pacmin[0m
+	timeout 1 /NOBREAK > nul
 )
-::pause
-::echo DONT!!
-::pause
-::pause
-::choice /c 8 /n /m "DON'T!! make sure \load!!!"
-:: remember to have all of the render files downloaded
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\batbox.exe" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
+:: Game Files
+if NOT EXIST "C:\Pacmin\Pacmin.bat" curl -s -o "C:\Pacmin\Pacmin.bat" "https://raw.githubusercontent.com/NoteProDotBat/Pacmin/main/Pacmin.bat"
+if NOT EXIST "C:\Pacmin\files\Pacminboard.bat" curl -s -o "C:\Pacmin\files\Pacminboard.bat" "https://raw.githubusercontent.com/NoteProDotBat/Pacmin/main/Pacminboard.bat"
+:: Button Files - .exe
+if NOT EXIST "C:\Pacmin\files\GetInput.exe" curl -s -o "C:\Pacmin\files\GetInput.exe" "https://raw.githubusercontent.com/NoteProDotBat/Pacmin/main/GetInput.exe"
+if NOT EXIST "C:\Pacmin\files\batbox.exe" curl -s -o "C:\Pacmin\files\batbox.exe" "https://raw.githubusercontent.com/NoteProDotBat/Pacmin/main/batbox.exe"
+:: Button Files - .bat
+if NOT EXIST "C:\Pacmin\files\Box.bat" curl -s -o "C:\Pacmin\files\Box.bat" "https://raw.githubusercontent.com/NoteProDotBat/Pacmin/main/Box.bat"
+if NOT EXIST "C:\Pacmin\files\Button.bat" curl -s -o "C:\Pacmin\files\Button.bat" "https://raw.githubusercontent.com/NoteProDotBat/Pacmin/main/Button.bat"
+if NOT EXIST "C:\Pacmin\files\Getlen.bat" curl -s -o "C:\Pacmin\files\Getlen.bat" "https://raw.githubusercontent.com/NoteProDotBat/Pacmin/main/Getlen.bat"
 
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\box.bat" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\box.bat" "https://drive.google.com/uc?id=1orlAdSW8llmSzG1Ns7_j0ZQoN0jwICyX&export=download"
+if NOT EXIST "C:\Pacmin\files\Work Log.txt" curl -s -o "C:\Pacmin\files\Work Log.txt" "https://raw.githubusercontent.com/NoteProDotBat/Pacmin/main/Work Log.txt"
 
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\Button.bat" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\Button.bat" "https://drive.google.com/uc?id=14Dg79351nWm_VeZpmpePatwb9EQgtCmm&export=download"
-
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\GetInput.exe" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\GetInput.exe" "https://drive.google.com/uc?id=1kCRPl5XtHUGFROwVDCAY9lHoxY6yrM2X&export=download"
-
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\Getlen.bat" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\Getlen.bat" "https://drive.google.com/uc?id=19SbhQZSHws24bvsWKXYTsP4OVHL8hko4&export=download"
-
-::::::::::::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\Pacmin.bat" curl -s -o "%USERPROFILE%\Desktop\Pacmin\Pacmin.bat" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin1.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin2.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin3.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin4.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin5.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin6.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin7.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin8.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin9.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin10.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin11.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin12.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin13.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin14.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin15.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin16.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin17.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin18.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin19.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\load\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\load\Pacmin20.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\batbload\ox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\render1.bat" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\set.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\view.bat" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-::if NOT EXIST "%USERPROFILE%\Desktop\Pacmin\files\Work Log.txt" curl -s -o "%USERPROFILE%\Desktop\Pacmin\files\batbox.exe" "https://drive.google.com/uc?id=1MjdtU-EHj4xPETGV5I6I232hdrXaspqN&export=download"
-
-::goto :menu
+cd..
+cd "C:\Pacmin\files"
 
 echo [?25l
 mode 58, 39
 
-echo.
-:: ::█
-echo [0;0H
-echo [4mWelcome[0m
-timeout 1 /NOBREAK > nul
-echo [0;0H
-echo.[4m       [0m           
-timeout 1 /NOBREAK > nul
-echo [0;0H
-echo [4mWelcome to[0m
-timeout 1 /NOBREAK > nul
-echo [0;0H
-echo.[4m          [0m        
-timeout 1 /NOBREAK > nul
-echo [0;0H
-echo [4mWelcome to Pacmin[0m
-timeout 1 /NOBREAK > nul
+
 :GOst
+
 if %Ghost%==0 set /a xpos = %xpos% + 1
 if %Ghost%==1 set /a xpos = %xpos% - 6
 
@@ -146,7 +119,7 @@ echo  [34m╔══════════════════════
 echo  ║[106m                                                      [0;34m║
 echo  ║[106m                                                      [0;34m║
 echo  ║[106m                                                      [0;34m║
-echo  ║[46m                                                      [0m[34m║
+echo  ║[46m                                                      [0;34m║
 echo  ╠══════════════════════════════════════════════════════╣
 echo  ║[106m                                                      [0;34m║
 echo  ║[106m                                                      [0;34m║
@@ -176,7 +149,7 @@ if %errorlevel%==1 goto :Credits
 if %errorlevel%==2 call :Load 100000
 if %errorlevel%==3 goto :Load
 if %errorlevel%==1 goto :Load
-if %errorlevel%==5 call :Load 4
+if %errorlevel%==5 call :Load 12
 goto :play
 
 :Credits
@@ -188,42 +161,75 @@ timeout /t 5 /NOBREAK > nul
 goto :menu
 :Load
 mode 113,33
-:LoadAni
-echo [0;0H
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::CHANGE!!!!
-type "C:\Users\irons\Desktop\CMD files\PacminLoad\animation\Pacmin%Fnum%.txt"
-set /a Fnum = %Fnum% + 1
-if %Fnum% GEQ 21 set /a Fnum = 1
-ping 0 -n 1 -w 1 > nul
-if %Fnum%==2 (
-	set/a ani+=1
-)
-if %ani% GEQ %1 exit /b
-goto :LoadAni
+cls
+:: Please! Take the time to use escape code sequences instead of typing files.
+set "circlePart1=           .:::::.             .:::::.             .:::::.             .:::::.  "
+set "circlePart2=         .,:::::::,.         .,:::::::,.         .,:::::::,.         .,:::::::,."
+set "circlePart3=         .:::::::::.         .:::::::::.         .:::::::::.         .:::::::::."
+set "circlePart4=         .:::::::::.         .:::::::::.         .:::::::::.         .:::::::::."
+set "circlePart5=          .,:::::,.           .,:::::,.           .,:::::,.           .,:::::,. "
+
+:: You can put this in a file and only type it once.
+
+echo.[3;0H                              [33m...,::::::::,...
+echo.                          .,,:::::::::::::::::::,,
+echo.                       ,::::::::::::::::::::::::::::.
+echo.                     ,:::::::::::::::::::::::::::::::::.
+echo.                   ,::::::::::::::::::::::::::::::::::::,.
+echo.                 .::::::::::::::::::::::::::::::::::::::,
+echo.                ,:::::::::::::::::::::::::::::::::::::.
+echo.               ,::::::::::::::::::::::::::::::::::::.
+echo.              ,::::::::::::::::::::::::::::::::::,
+echo.             .:::::::::::::::::::::::::::::::::,
+echo.             ,:::::::::::::::::::::::::::::::.
+echo.            .,::::::::::::::::::::::::::::,
+echo.            .:::::::::::::::::::::::::::,
+echo.            .:::::::::::::::::::::::::::,
+echo.            .,::::::::::::::::::::::::::::,
+echo.             ,:::::::::::::::::::::::::::::::.
+echo.             .:::::::::::::::::::::::::::::::::,
+echo.              ,::::::::::::::::::::::::::::::::::,
+echo.               ,::::::::::::::::::::::::::::::::::::.
+echo.                ,:::::::::::::::::::::::::::::::::::::.
+echo.                 .::::::::::::::::::::::::::::::::::::::,.
+echo.                   ,::::::::::::::::::::::::::::::::::::,.
+echo.                     ,:::::::::::::::::::::::::::::::::.
+echo.                       ,::::::::::::::::::::::::::::.
+echo.                          .,,:::::::::::::::::::,,
+echo.                              ...,::::::::,...[0m
+
+:LoadAnimation
+set/a offset+=1
+if %offset% GEQ 20 set "offset=1" && set/a loop+= 1
+echo.[13;48H!circlePart1:~%offset%,60!
+echo.[14;48H!circlePart2:~%offset%,60!
+echo.[15;48H!circlePart3:~%offset%,60!
+echo.[16;48H!circlePart4:~%offset%,60!
+echo.[17;48H!circlePart5:~%offset%,60!
+if "%loop%" GEQ "%1" exit/b
+goto:LoadAnimation
+
 
 :play
 set x=0
 set y=1
-set yNum=32
 mode 92, 34
 call "Pacminboard.bat"
 :Game
-set yNum=!y!
 for /L %%A in (1, 1, 32) do (
-	call :Render %%A
+	for /L %%B in (!y!, 1, !y!) do (
+		echo [%%A;0H!L%%B:~%x%,91!
+	)
+	set/a y+=1
 )
+set/a y-=32
 getinput
 :: Key up pressed
-if %errorlevel%==294 if !y! GTR 1 set /a y-=1
+if %errorlevel%==294 if !y! GTR 2 (set/a y-=2) ELSE (set y=1)
 :: Key down pressed
-if %errorlevel%==296 if !y! LSS 207 set /a y+=1
+if %errorlevel%==296 if !y! LSS 175 (set/a y+=2) ELSE (set y=176)
 :: Key left pressed
-if %errorlevel%==293 if !x! GTR 0 set /a x-=1
+if %errorlevel%==293 if !x! GTR 0 set/a x-=4
 :: Key right pressed
-if %errorlevel%==295 if !x! LSS 308 set /a x+=1
-goto :Game
-
-:Render
-echo [%~1;0H!L%yNum%:~%x%,91!
-set/a yNum+=1
-exit/b
+if %errorlevel%==295 if !x! LSS 308 set/a x+=4
+goto:Game
