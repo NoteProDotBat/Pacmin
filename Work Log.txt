@@ -67,4 +67,12 @@ the render process in order to make it MUCH faster. Rendering has changed from 1
 DATE 5/19/2023
 I have been very buisy but I optimised the render process more and I improved the loading 
 animation. Right now I am updating the github repository and making Pacmin more like an app.
-I am making Pacmin download to C drive and using github for downloading files.
+I am making Pacmin download to c drive and us github for downloading files.
+- NotePro
+
+DATE 8/9/2023
+I am worried for this project. I want to finnish but my side projects are getting the better
+of me. I created a player sprite and worked on the loading animation. There is a player
+sprite for every direction. I need to do something about getinput because I need the player
+to move even when the user is not pressing a key.
+- NotePro
