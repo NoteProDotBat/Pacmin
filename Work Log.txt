@@ -76,3 +76,8 @@ of me. I created a player sprite and worked on the loading animation. There is a
 sprite for every direction. I need to do something about getinput because I need the player
 to move even when the user is not pressing a key.
 - NotePro
+
+DATE 12/17/2023
+Things are going great! Collision is in the process of being implemented. Right now, the 
+sprite just jumps positions whenever collision happens which is a little entertaining.
+I am going to fix it allong with a few other problems not mentioned...
