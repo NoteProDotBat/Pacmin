@@ -336,7 +336,7 @@ goto:LoadAnimation
 
 
 :play
-set x=180
+set x=179
 set y=102
 set direction=0
 mode 91, 33
@@ -432,6 +432,21 @@ set /a nextX += %adjustX%
 set /a tempX += %adjustX%
 set /a nextY += %adjustY%
 set /a tempY += %adjustY%
+
+for /L %%i in (%nextY%,1,%tempY%) do (
+    for /L %%j in (%nextX%,2,%tempX%) do (
+        if "!L%%i:~%%j,1!" neq " " (
+            set "collision=true"
+            goto :endCollision
+			goto :eof
+        )
+    )
+)
+
+set /a nextX -= %adjustX% / 2
+set /a tempX -= %adjustX% / 2
+set /a nextY -= %adjustY% / 2
+set /a tempY -= %adjustY% / 2
 
 for /L %%i in (%nextY%,1,%tempY%) do (
     for /L %%j in (%nextX%,2,%tempX%) do (
