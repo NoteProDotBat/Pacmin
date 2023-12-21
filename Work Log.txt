@@ -8,12 +8,12 @@ cmd without getting strange outputs.
 
 DATE: 6/9/2022
 Finally finished removing all '&'! I learned that I made a mistake while replacing all '&' and
-now need to decide how many characters long and wide I want the character to be.
+now need to decide how many characters long and wide I want the character (I meant player) to be.
 - NotePro
 
 DATE: 6/30/2022
 It has been way to long. I decided that I will make the character 27 characters wide and 12
-characters tall.
+characters tall. (Eventualy I decided to change it to 25 wide 12 tall)
 - NotePro
 
 DATE: 7/13/2022
@@ -67,7 +67,7 @@ the render process in order to make it MUCH faster. Rendering has changed from 1
 DATE 5/19/2023
 I have been very buisy but I optimised the render process more and I improved the loading 
 animation. Right now I am updating the github repository and making Pacmin more like an app.
-I am making Pacmin download to c drive and us github for downloading files.
+I am making Pacmin download to c drive and use github for downloading files.
 - NotePro
 
 DATE 8/9/2023
@@ -81,3 +81,22 @@ DATE 12/17/2023
 Things are going great! Collision is in the process of being implemented. Right now, the 
 sprite just jumps positions whenever collision happens which is a little entertaining.
 I am going to fix it allong with a few other problems not mentioned...
+- NotePro
+
+DATE 12/18/2023
+Collision is in place but the board needs to be slightly redone. A third check needs to 
+be done for collision as well to prevent the player from being able to walk into walls.
+- NotePro
+
+DATE 12/20/2023
+The board is fixed, making every spot finally accessable with collison. The third collision
+check is done as well. Thank you Kotsasmin for helping with the collision. I could not
+have done it without you.
+- NotePro
+
+DATE 12/21/2023
+Fixed player blinking and optamised the code a little by only updating how the player looks
+when a key is pressed and not durring the rendering process. I am not sure how I will get
+the logic for the ghosts to chase the player to work. Nor do I know how I am going to display
+them. Hopefully I will not have to redo the rendering process.
+- NotePro
