@@ -100,3 +100,14 @@ when a key is pressed and not durring the rendering process. I am not sure how I
 the logic for the ghosts to chase the player to work. Nor do I know how I am going to display
 them. Hopefully I will not have to redo the rendering process.
 - NotePro
+
+DATE 5/29/2024
+I am finally getting back into the game. The player is no longer drawn every frame when going
+in the same direction and there is no pause for movement. When a direction is pressed, the
+player continues in the direction without the key being held down. I am going to try to
+create a variable to allow for the player to move easier throughout the board by pressing the
+direction that you want to go. When the player is able to go in the desired direction, the
+main direction will change causing the player to change direction. I plan to create a
+board-wrap and then work on the ghosts for a while. Future plans are stated on the top of the
+pacmin.bat file.
+- NotePro
